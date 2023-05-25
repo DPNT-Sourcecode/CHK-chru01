@@ -85,7 +85,7 @@ def checkout(skus):
                 
                 temp_offer_count = (temp_count + current_count) // OFFERS_GROUP[offer][0]
                 # temp_count = temp_count % offer[0]
-                res += temp_offer_count * offer[1]
+                res += temp_offer_count * OFFERS_GROUP[offer][1]
             
     
     
@@ -102,6 +102,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
