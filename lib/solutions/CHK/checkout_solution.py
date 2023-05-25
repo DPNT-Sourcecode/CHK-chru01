@@ -14,6 +14,7 @@ OFFERS = {
     "B": (2, 45),
 }
 
+
 def checkout(skus):
     basket = {}
     
@@ -35,10 +36,12 @@ def checkout(skus):
             temp_offer_count = temp_count // OFFERS[product][0]
             
             res += temp_regular_count * PRICES[product]
-            res += temp_offer_count * OFFERS[product]
+            res += temp_offer_count * OFFERS[product][1]
         else:
             res += basket[product] * PRICES[product]
             
+    return res
+
 
 
 
