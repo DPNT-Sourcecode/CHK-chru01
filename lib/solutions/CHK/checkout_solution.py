@@ -32,11 +32,11 @@ PRICES = {
 }
 
 OFFERS_MULTIPLE = {
-    "A": [(5, 200), (3, 130)], #
-    "B": [(2, 45)],#
-    "F": [(3, 20)],#
-    "H": [(10, 80), (5, 45)],#
-    "K": [(2, 150)],
+    "A": [(5, 200), (3, 130)], 
+    "B": [(2, 45)],
+    "F": [(3, 20)],
+    "H": [(10, 80), (5, 45)],
+    "K": [(2, 120)],
     "P": [(5, 200)],
     "Q": [(3, 80)],
     "U": [(4, 120)],
@@ -44,9 +44,13 @@ OFFERS_MULTIPLE = {
 }
 
 OFFERS_GET_FREE = {
-    "E": (2, "B"),#
+    "E": (2, "B"),
     "N": (3, "M"),
     "R": (3, "Q"),
+}
+
+OFFERS_GROUP = {
+    ("Z", "S", "T", "Y", "X"): (3, 45),
 }
 
 
@@ -63,6 +67,8 @@ def checkout(skus):
             basket[product] = 1
     
     res = 0
+    
+    
     
     for product in basket:
         if product in OFFERS_GET_FREE:
@@ -85,4 +91,5 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
