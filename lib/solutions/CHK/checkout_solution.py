@@ -10,12 +10,13 @@ PRICES = {
     "E": 40,
 }
 
-OFFERS = {
-    "A": {
-        "type": "reduce_price"
-        (3, 130)
-        },
+OFFERS_MULTIPLE = {
+    "A": (3, 130),
     "B": (2, 45),
+}
+
+OFFERS_GET_FREE = {
+    "E": (2, "B"),
 }
 
 
@@ -45,6 +46,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
