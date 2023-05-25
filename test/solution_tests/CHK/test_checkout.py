@@ -14,9 +14,14 @@ class TestSum():
         assert checkout_solution.checkout("BBBBBEEEE") == 75 + 160
         assert checkout_solution.checkout("BBEEEE") == 160
         assert checkout_solution.checkout("F") == 10
-        assert checkout_solution.checkout("FF") == 10
+        assert checkout_solution.checkout("FF") == 20
+        assert checkout_solution.checkout("FFF") == 20
+        assert checkout_solution.checkout("FFFF") == 30
+        assert checkout_solution.checkout("FFFFF") == 40
+        assert checkout_solution.checkout("FFFFFF") == 40
         
         
+
 
 
 

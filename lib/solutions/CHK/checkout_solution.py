@@ -8,6 +8,7 @@ PRICES = {
     "C": 20,
     "D": 15,
     "E": 40,
+    "F": 10,
 }
 
 OFFERS_MULTIPLE = {
@@ -56,6 +57,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
