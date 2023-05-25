@@ -186,4 +186,3 @@ class TestSum():
         assert checkout_solution.checkout("YYYY") == 45 + 20
         assert checkout_solution.checkout("ZSTX") == 45 + 17
         assert checkout_solution.checkout("ZSTTX") == 45 + 17 + 20
-
