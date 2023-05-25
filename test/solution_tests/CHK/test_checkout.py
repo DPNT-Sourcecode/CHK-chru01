@@ -39,7 +39,3 @@ class TestSum():
         assert checkout_solution.checkout("X") == 90
         assert checkout_solution.checkout("Y") == 10
         assert checkout_solution.checkout("Z") == 50
-
-
-
-
