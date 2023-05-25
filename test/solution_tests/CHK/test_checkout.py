@@ -151,9 +151,9 @@ class TestSum():
         assert checkout_solution.checkout("FFFFFF") == 40
         assert checkout_solution.checkout("FFFFFF") == 40
         assert checkout_solution.checkout("K") == 70
-        assert checkout_solution.checkout("KK") == 150
-        assert checkout_solution.checkout("KKK") == 230
-        assert checkout_solution.checkout("KKKK") == 300
+        assert checkout_solution.checkout("KK") == 120
+        assert checkout_solution.checkout("KKK") == 190
+        assert checkout_solution.checkout("KKKK") == 240
         assert checkout_solution.checkout("Q") == 30
         assert checkout_solution.checkout("QQ") == 60
         assert checkout_solution.checkout("QQQ") == 80
@@ -174,7 +174,16 @@ class TestSum():
         assert checkout_solution.checkout("HHHHHHHH") == 75
         assert checkout_solution.checkout("HHHHHHHHH") == 85
         assert checkout_solution.checkout("HHHHHHHHHH") == 80
-        assert checkout_solution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ") == 1880
-        assert checkout_solution.checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH") == 1880
-        assert checkout_solution.checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH") == 1640
-        assert checkout_solution.checkout("PPPPQRUVPQRUVPQRUVSU") == 740
+        assert checkout_solution.checkout("ZZZ") == 45
+        assert checkout_solution.checkout("SSS") == 45
+        assert checkout_solution.checkout("TTT") == 45
+        assert checkout_solution.checkout("XXX") == 45
+        assert checkout_solution.checkout("YYY") == 45
+        assert checkout_solution.checkout("ZZZZ") == 45 + 21
+        assert checkout_solution.checkout("SSSS") == 45 + 20
+        assert checkout_solution.checkout("TTTT") == 45 + 20
+        assert checkout_solution.checkout("XXXX") == 45 + 17
+        assert checkout_solution.checkout("YYYY") == 45 + 20
+        assert checkout_solution.checkout("ZSTX") == 45 + 17
+        assert checkout_solution.checkout("ZSTTX") == 45 + 17 + 20
+
