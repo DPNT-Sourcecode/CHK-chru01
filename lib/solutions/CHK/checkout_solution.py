@@ -78,15 +78,14 @@ def checkout(skus):
     
     for offer in OFFERS_GROUP:
         temp_count = 0
-        temp_product = None
         for product in offer:
             if product in basket:
-                current_count = basket[product]
-                
-                temp_offer_count = (temp_count + current_count) // OFFERS_GROUP[offer][0]
-                # temp_count = temp_count % offer[0]
-                res += temp_offer_count * OFFERS_GROUP[offer][1]
-            
+                temp_count += basket[product]
+        
+        res += (temp_count // OFFERS_GROUP[offer][0]) * OFFERS_GROUP[offer][1]
+        temp_count %= OFFERS_GROUP[offer][0]
+        
+        
     
     
     for product in basket:
@@ -102,6 +101,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
