@@ -46,15 +46,14 @@ def checkout(skus):
             
         if product in OFFERS_MULTIPLE:
             temp_count = basket[product]
-            for 
-            temp_regular_count = temp_count % OFFERS_MULTIPLE[product][0]
-            temp_offer_count = temp_count // OFFERS_MULTIPLE[product][0]
-            
-            res += temp_regular_count * PRICES[product]
-            res += temp_offer_count * OFFERS[product][1]
-        
+            for offer in OFFERS_MULTIPLE[product]:
+                temp_offer_count = temp_count // offer[0]
+                temp_count = temp_count % offer[0]
+                res += temp_offer_count * offer[1]
+            res += temp_count * PRICES[product]
         else:
             res += basket[product] * PRICES[product]
             
     return res
+
 
