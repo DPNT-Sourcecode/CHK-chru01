@@ -3,7 +3,7 @@ from lib.solutions.CHK import checkout_solution
 
 class TestSum():
     def test_checkout(self):
-        assert checkout_solution.checkout("ABCL") == -1
+        assert checkout_solution.checkout("ABCl") == -1
         assert checkout_solution.checkout("ABCD") == 115
         assert checkout_solution.checkout("AAAA") == 180
         assert checkout_solution.checkout("AAAAA") == 200
@@ -19,5 +19,8 @@ class TestSum():
         assert checkout_solution.checkout("FFFF") == 30
         assert checkout_solution.checkout("FFFFF") == 40
         assert checkout_solution.checkout("FFFFFF") == 40
+        assert checkout_solution.checkout("") == 40
         
         
+        
+

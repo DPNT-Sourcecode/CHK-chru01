@@ -35,7 +35,8 @@ OFFERS_MULTIPLE = {
     "A": [(5, 200), (3, 130)],
     "B": [(2, 45)],
     "F": [(3, 20)],
-    "K": [(2, 50)],
+    "H": [(10, 80), (5, 45)],
+    "K": [(2, 150)],
     "P": [(5, 200)],
     "Q": [(3, 80)],
     "U": [(4, 120)],
@@ -84,6 +85,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
