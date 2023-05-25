@@ -13,6 +13,7 @@ PRICES = {
 OFFERS_MULTIPLE = {
     "A": [(5, 200), (3, 130)],
     "B": [(2, 45)],
+    "F": [(3, 20)],
 }
 
 OFFERS_GET_FREE = {
@@ -55,5 +56,6 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
