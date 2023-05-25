@@ -36,16 +36,19 @@ def checkout(skus):
     
     for product in basket:
         if product in OFFERS_GET_FREE:
-            
-            
+            temp_count = basket[product]
+            temp_free_items = temp_count // OFFERS_GET_FREE[product][0]
+            if OFFERS_GET_FREE[product][1] in basket:
+                basket[OFFERS_GET_FREE[product][1]] -= min(basket[OFFERS_GET_FREE[product][1]], temp_free_items)         
             
     
     for product in basket:
             
-        if product in OFFERS:
+        if product in OFFERS_MULTIPLE:
             temp_count = basket[product]
-            temp_regular_count = temp_count % OFFERS[product][0]
-            temp_offer_count = temp_count // OFFERS[product][0]
+            for 
+            temp_regular_count = temp_count % OFFERS_MULTIPLE[product][0]
+            temp_offer_count = temp_count // OFFERS_MULTIPLE[product][0]
             
             res += temp_regular_count * PRICES[product]
             res += temp_offer_count * OFFERS[product][1]
@@ -54,3 +57,4 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
