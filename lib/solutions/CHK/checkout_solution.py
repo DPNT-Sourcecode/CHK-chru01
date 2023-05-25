@@ -11,8 +11,8 @@ PRICES = {
 }
 
 OFFERS_MULTIPLE = {
-    "A": (3, 130),
-    "B": (2, 45),
+    "A": [(5, 200), (3, 130)],
+    "B": [(2, 45)],
 }
 
 OFFERS_GET_FREE = {
@@ -35,6 +35,13 @@ def checkout(skus):
     res = 0
     
     for product in basket:
+        if product in OFFERS_GET_FREE:
+            
+            
+            
+    
+    for product in basket:
+            
         if product in OFFERS:
             temp_count = basket[product]
             temp_regular_count = temp_count % OFFERS[product][0]
@@ -42,13 +49,8 @@ def checkout(skus):
             
             res += temp_regular_count * PRICES[product]
             res += temp_offer_count * OFFERS[product][1]
+        
         else:
             res += basket[product] * PRICES[product]
             
     return res
-
-
-
-
-
-
