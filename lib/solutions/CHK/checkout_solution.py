@@ -2,7 +2,7 @@
 
 # noinspection PyUnusedLocal
 # skus = unicode string
-PRODUCTS = {
+PRICES = {
     "A": 50,
     "B": 30,
     "C": 20,
@@ -18,7 +18,7 @@ def checkout(skus):
     basket = {}
     
     for product in skus:
-        if product not in PRODUCTS:
+        if product not in PRICES:
             return -1
 
         if product in basket:
@@ -30,8 +30,15 @@ def checkout(skus):
     
     for product in basket:
         if product in OFFERS:
-            pass
+            temp_count = basket[product]
+            temp_regular_count = temp_count % OFFERS[product][0]
+            temp_offer_count = temp_count // OFFERS[product][0]
+            
+            res += temp_regular_count * PRICES[product]
+            res += temp_offer_count * OFFERS[product]
         else:
-            res += basket[product] * PRODUCTS[product]
+            res += basket[product] * PRICES[product]
+            
+
 
 
