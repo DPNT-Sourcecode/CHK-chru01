@@ -57,7 +57,3 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
-
-
-
-

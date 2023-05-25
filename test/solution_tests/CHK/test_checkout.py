@@ -21,7 +21,3 @@ class TestSum():
         assert checkout_solution.checkout("FFFFFF") == 40
         
         
-
-
-
-
