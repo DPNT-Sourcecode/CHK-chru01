@@ -88,8 +88,9 @@ def checkout(skus):
         for product in offer:
             if product in basket:
                 if temp_count > 0:
+                    remain = min(temp_count,- basket[product], 0)
                     temp_count -= basket[product]
-                    basket[product] = max(0, (basket[product] - temp_count))
+                    basket[product] = max((basket[product], temp_count))
                 else:
                     basket[product] = 0
                 
@@ -108,6 +109,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
