@@ -50,7 +50,7 @@ OFFERS_GET_FREE = {
 }
 
 OFFERS_GROUP = {
-    ("Z", "S", "T", "Y", "X"): (3, 45),
+    ("X", "Y", "T", "S", "Z"): (3, 45),
 }
 
 
@@ -85,7 +85,13 @@ def checkout(skus):
         res += (temp_count // OFFERS_GROUP[offer][0]) * OFFERS_GROUP[offer][1]
         temp_count %= OFFERS_GROUP[offer][0]
         
-        
+        for product in offer:
+            if product in basket:
+                if temp_count > 0:
+                    if product in basket:
+                        basket[product] -= min(basket[product], temp_count)
+                else:
+                
     
     
     for product in basket:
@@ -101,6 +107,7 @@ def checkout(skus):
             res += basket[product] * PRICES[product]
             
     return res
+
 
 
 
