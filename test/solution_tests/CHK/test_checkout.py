@@ -34,16 +34,12 @@ class TestSum():
         assert checkout_solution.checkout("S") == 30
         assert checkout_solution.checkout("T") == 20
         assert checkout_solution.checkout("UUUUU") == 160
-        assert checkout_solution.checkout(6 * "V") == 130 + 90 + 50
+        assert checkout_solution.checkout(5 * "V") == 130 + 90
         assert checkout_solution.checkout("W") == 20
         assert checkout_solution.checkout("X") == 90
         assert checkout_solution.checkout("Y") == 10
         assert checkout_solution.checkout("Z") == 50
-        
-        
-        
-        
-        
+
 
 
 
